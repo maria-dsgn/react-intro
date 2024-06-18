@@ -32,10 +32,11 @@
   box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-.btn-contaner {
+.btn-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-container {
@@ -108,11 +109,13 @@ img {
 }
 
 .color-container {
-  margin-top: 100px;
+  margin-top: 80px;
   padding: 40px;
   border-radius: 100px;
   box-shadow: 0px 0px 10px 4px rgba(252, 90, 255, 0.207);
 
+  width: 400px;
+  height: 120px;
   display: flex;
   gap: 60px;
   justify-content: center;
@@ -137,4 +140,29 @@ img {
   width: 42px;
   height: 42px;
   border: none;
+}
+
+.visibility-icon {
+  cursor: pointer;
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+.password-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+
+  margin-bottom: 20px;
+}
+
+.password-box {
+  width: 160px;
+  height: 24px;
+  border-radius: 5px;
+
+  font-size: 16px;
+  border: 1px solid rgba(122, 122, 122, 0.531);
 }

@@ -43,6 +43,8 @@ function App() {
     setColor(event.target.value);
   };
 
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <>
       <nav className="nav-container">
@@ -56,9 +58,25 @@ function App() {
           {isLoggedIn ? "Log Out" : "Log In"}
         </button>
       </nav>
-
       <h2>React State Exercise</h2>
-
+      {/* password segment */}
+      <div className="password-container">
+        <label htmlFor="password">Enter password:</label>
+        <input
+          className="password-box"
+          id="password"
+          type={isVisible === true ? "text" : "password"}
+        />
+        <span
+          className="visibility-icon"
+          onClick={() => setIsVisible(isVisible ? false : true)}
+        >
+          {isVisible ? "🙈" : "👀"}
+        </span>
+        {/* also correct, compact version <span onClick={() => setIsVisible(!isVisible)}>
+        {isVisible ? "👀" : "🐸"}{" "}
+      </span> */}{" "}
+      </div>
       <div className="btn-container">
         <button
           onClick={() => {
@@ -75,11 +93,9 @@ function App() {
           Umschalten auf Deutsch
         </button>
       </div>
-
       <p className="message-box">{message}</p>
       {/* the changes is not visible if changes made not in DOM */}
       {/* we use react state for this */}
-
       {/* color pick */}
       <div
         className="color-container"
@@ -110,7 +126,6 @@ function App() {
           <p>{color}</p>
         </div>
       </div>
-
       <footer className="footer-container">
         <p className="footer-text">Hier is footer text</p>
         <button className="footer-btn" onClick={handleLike}>
