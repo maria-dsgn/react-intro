@@ -107,6 +107,7 @@ function App() {
             id="colorPicker"
             onChange={changeColor}
           />
+          <p>{color}</p>
         </div>
       </div>
 
