@@ -12,7 +12,7 @@ function App() {
     setisLoggedIn(!isLoggedIn);
   };
 
-  const [isLiked, setisLiked] = useState(false);
+  const [isLiked, setisLiked] = useState(true);
   //function that changes value of Like/Unlike btn
   const handleLike = () => {
     setisLiked(!isLiked);
@@ -34,6 +34,14 @@ function App() {
       <p>Willkommen auf React State-Seite. Log in um State zu sehen!</p>
     );
   }
+
+  // create a new state variable that holds the color value
+  const [color, setColor] = useState("#ffffff");
+  // appropriate type your state needs to have hex code, default color
+
+  const changeColor = (event) => {
+    setColor(event.target.value);
+  };
 
   return (
     <>
@@ -71,6 +79,37 @@ function App() {
       <p className="message-box">{message}</p>
       {/* the changes is not visible if changes made not in DOM */}
       {/* we use react state for this */}
+
+      {/* color pick */}
+      <div
+        className="color-container"
+        // style={{
+        //   // boxShadow: "0px 0px 10px 4px ${color}",
+        //   border: "11px solid ${color}",
+        // }}
+      >
+        <div
+          className="color-box"
+          style={{
+            backgroundColor: color,
+          }}
+        ></div>
+
+        {/* create an input element in your JSX and use type="color" */}
+        <div>
+          <label htmlFor="colorPicker">
+            Pick a color:
+            <br />
+          </label>
+          <input
+            type="color"
+            value={color}
+            id="colorPicker"
+            onChange={changeColor}
+          />
+        </div>
+      </div>
+
       <footer className="footer-container">
         <p className="footer-text">Hier is footer text</p>
         <button className="footer-btn" onClick={handleLike}>

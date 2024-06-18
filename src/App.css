@@ -106,3 +106,35 @@ img {
   object-fit: cover;
   border-radius: 3px;
 }
+
+.color-container {
+  margin-top: 100px;
+  padding: 40px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px 4px rgba(252, 90, 255, 0.207);
+
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.color-box {
+  display: block;
+  border: 2px solid rgba(203, 203, 203, 0.531);
+  border-radius: 60px;
+  width: 100px;
+  height: 100px;
+
+  background-color: rgb(255, 255, 255);
+
+  transition: 300ms;
+}
+
+#colorPicker {
+  margin-top: 10px;
+  width: 42px;
+  height: 42px;
+  border: none;
+}
